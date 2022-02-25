@@ -62,7 +62,7 @@
                                                                     </td>
                                                                 <?php } else if ($this->session->userdata('logged_in') == false) { ?>
                                                                     <td height="40px">
-                                                                        <button type="button" class="btn btn-outline-success" disabled>Dipinjam</button>
+                                                                        <button type="button" class="btn btn-outline-success btn-lg" disabled>Dipinjam</button>
                                                                     </td>
                                                                 <?php } ?>
                                                             <?php } ?>

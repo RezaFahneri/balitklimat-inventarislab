@@ -13,7 +13,7 @@
                                         <form method="post" action="<?php echo base_url('perbaikan_alat/tambah_aksi') ?>" enctype="multipart/form-data"></br>
                                         <div class="form-group">
                                                 <label>Nama Alat </label></br>
-                                                <select name="idalat" id="idalat" class="form-control" required>
+                                                <select name="idalat" id="idalat" class="js-example-basic-single form-control" required>
                                                     <option value="">--Pilih Nama Alat--</option>
                                                     <?php
                                                     foreach ($alat as $row) { ?>

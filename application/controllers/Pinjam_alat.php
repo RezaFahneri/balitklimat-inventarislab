@@ -28,7 +28,7 @@ class Pinjam_alat extends CI_Controller
 
     function pinjam()
     {
-        $data['title'] = 'Pinjam Barang | Balitklimat';
+        $data['title'] = 'Pinjam Alat | Balitklimat';
         $data['alat'] = $this->Model_stok->tampil_datapinjam();
         $this->load->view('template/template', $data);
         $this->load->view('peminjaman/v_tambah_pinjam', $data);

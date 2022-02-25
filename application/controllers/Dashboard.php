@@ -40,7 +40,8 @@ class Dashboard extends CI_Controller
 			'logged_in'	=> false,
 		);
 
+		$this->session->set_flashdata('sukses', 'Logout berhasil');
 		$this->session->sess_destroy();
-		redirect('login');
+		redirect('dashboard');
 	}
 }

@@ -6,6 +6,7 @@
             <div class="row">
                 <div class="col-md-12 grid-margin">
                     <div class="row">
+                    <div class="flash-data" id="flash2" data-flash="<?= $this->session->flashdata('sukses'); ?>"></div>
                         <?php if ($this->session->userdata('logged_in') == true) { ?>
                             <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                                 <h4 class="font-weight-normal mb-0">Halo, <?php echo $this->db->where('email', $this->session->userdata('email'))->get('data_pegawai')->row('nama_pegawai'); ?> !</h4></br>

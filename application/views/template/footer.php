@@ -83,6 +83,13 @@
         });
     </script>
 
+    <!-- Search select option  -->
+    <script type="text/javascript" charset="utf8" src="<?php echo base_url() ?>assets/select2/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
 
 
 </body>

@@ -72,7 +72,6 @@ class Login extends CI_Controller
                //Model function  
                $this->load->Model('Model_login');
                if ($this->Model_login->bisalogin($email, $password)) {
-                    $this->session->set_flashdata('sukses', 'Login berhasil');
                     redirect('dashboard');
                } else {
                     $this->session->set_flashdata('gagal', 'Email atau Password salah!');

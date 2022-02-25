@@ -34,6 +34,8 @@
     </style>
     <!-- datatable -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>//DataTables/datatables.css">
+    <!-- search select option -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets'); ?>/select2/css/select2.min.css">
 </head>
 
 <body>
@@ -46,7 +48,10 @@
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
                 <ul class="navbar-nav navbar-nav-right">
                     <div class="profile_info my-auto">
-                        <p style="margin:1px;"><?php echo $this->db->where('email', $this->session->userdata('email'))->get('data_pegawai')->row('nama_pegawai'); ?></p>
+                        <?php if ($this->session->userdata('logged_in') == false) { ?>
+                            <b>Pengunjung</b>&nbsp;
+                        <?php } ?>
+                        <b style="margin:1px;"><?php echo $this->db->where('email', $this->session->userdata('email'))->get('data_pegawai')->row('nama_pegawai'); ?></b>
                     </div>&nbsp;&nbsp;
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -54,7 +59,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                             <?php if ($this->session->userdata('logged_in') == true) { ?>
-                                <a class="dropdown-item" href="<?php echo base_url(); ?>dashboard/logout">
+                                <a id="logout" class="dropdown-item" href="<?php echo base_url(); ?>dashboard/logout">
                                     <i class="mdi mdi-logout"></i>
                                     Logout
                                 </a>
@@ -268,6 +273,13 @@
                             <span class="menu-title">Perbaikan Alat</span>
                         </a>
                     </li>
+                    <?php if ($this->session->userdata('logged_in') == false) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url(); ?>login" aria-expanded="false">
+                                <span class="menu-title">Login</span>
+                            </a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </nav>
 

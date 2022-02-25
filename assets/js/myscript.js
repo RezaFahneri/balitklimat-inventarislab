@@ -3,7 +3,7 @@ var flash = $('#flash').data('flash');
 if (flash) {
     Swal.fire({
         icon: 'error',
-        title: 'Peminjaman Barang',
+        title: 'Peminjaman Alat',
         text: flash,
     })
 }
@@ -21,7 +21,7 @@ var flash5 = $('#flash5').data('flash');
 if (flash5) {
     Swal.fire({
         icon: 'error',
-        title: 'Data Barang',
+        title: 'Data Alat',
         text: flash5,
     })
 }
@@ -63,13 +63,33 @@ $(document).on('click', '#dipinjamkan1',function (e) {
     var href = $(this).attr('href')
 
     Swal.fire({
-        title: 'Pinjamkan barang?',
+        title: 'Pinjamkan alat',
         text: "",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Pinjamkan'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location = href;
+        }
+    })
+})
+
+$(document).on('click', '#logout',function (e) {
+
+    e.preventDefault();
+    var href = $(this).attr('href')
+
+    Swal.fire({
+        title: 'Yakin Logout sistem?',
+        text: "",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Logout'
     }).then((result) => {
         if (result.isConfirmed) {
             window.location = href;

@@ -27,7 +27,7 @@ class Perbaikan_alat extends CI_Controller
 
     function tambah()
     {
-        $data['title'] = 'Tambah Perbaikan Barang | Balitklimat';
+        $data['title'] = 'Tambah Perbaikan Alat | Balitklimat';
         $data['alat'] = $this->Model_stok->tampil_dataperbaikan();
         $this->load->view('template/template', $data);
         $this->load->view('perbaikan/v_tambah_perbaikan', $data);
